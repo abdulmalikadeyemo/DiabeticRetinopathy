@@ -13,8 +13,8 @@ import requests
 from io import BytesIO
 
 import pathlib
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 
 path = Path('.')
 
