@@ -16,6 +16,8 @@ import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
 
+path = Path()
+
 
 def get_x(r): return image_path/r['train_image_name']
 def get_y(r): return r['class']
@@ -33,7 +35,7 @@ def predict(img, display_img):
         time.sleep(3)
 
     # Load model and make prediction
-    model = load_learner('./export.pkl')
+    model = load_learner(path/'export.pkl')
     pred, pred_idx, prob = model.predict(img)
 #     pred_prob = round(torch.max(model.predict(img)[2]).item()*100)
     
@@ -50,12 +52,12 @@ option = st.radio('', ['Choose a test image'])
 if option == 'Choose a test image':
 
     # Test image selection
-    test_images = os.listdir('./sample/')
+    test_images = os.listdir(path/'sample')
     test_image = st.selectbox(
         'Please select a test image:', test_images)
 
     # Read the image
-    file_path = './sample/' + test_image
+    file_path = path/'sample'/test_image
     img = PILImage.create(file_path)
     # Get the image to display
     display_img = mpimg.imread(file_path)
