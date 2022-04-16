@@ -14,9 +14,9 @@ from io import BytesIO
 
 import pathlib
 temp = pathlib.PosixPath
-# pathlib.PosixPath = pathlib.WindowsPath
+pathlib.PosixPath = pathlib.WindowsPath
 
-path = Path()
+path = Path('.')
 
 
 def get_x(r): return image_path/r['train_image_name']
