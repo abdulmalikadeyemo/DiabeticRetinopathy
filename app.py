@@ -14,7 +14,7 @@ from io import BytesIO
 
 import pathlib
 temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+# pathlib.PosixPath = pathlib.WindowsPath
 
 path = Path()
 
