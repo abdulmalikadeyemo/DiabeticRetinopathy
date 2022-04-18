@@ -18,6 +18,8 @@ if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
     
 import base64
 
+path = Path('.')
+
 @st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
@@ -38,8 +40,8 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('dr_background.png')
-path = Path('.')
+set_png_as_page_bg(path/'dr_background.png')
+
 
 
 def get_x(r): return image_path/r['train_image_name']
