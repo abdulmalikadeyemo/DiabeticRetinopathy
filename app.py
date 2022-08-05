@@ -15,7 +15,6 @@ import requests
 from io import BytesIO
 import pathlib
 
-from streamlit_option_menu import option_menu
 
 # st.set_page_config(layout="wide")
 
